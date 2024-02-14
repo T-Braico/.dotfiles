@@ -15,6 +15,9 @@
 - create:
     - ~/
     - ~/.config/nvim/
+    - ~/.config/nvim/lua/trevor/
+    - ~/.config/nvim/after/plugin/
+    - ~/.config/nvim/plugin/
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
