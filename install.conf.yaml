@@ -5,12 +5,16 @@
 - clean: ['~']
 
 - link:
-    ~/.config/nvim/: .config/nvim
-    ~/.bashrc: .bashrc
+    ~/.bashrc: bashrc
+    ~/.config/nvim/:
+      glob: true
+      path: config/nvim/**
+    ~/.xinitrc: xinitrc
+    ~/.gitconfig: gitconfig
 
 - create:
     - ~/
-    - ~/.vim/undo-history
+    - ~/.config/nvim/
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
