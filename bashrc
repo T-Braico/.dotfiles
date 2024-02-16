@@ -49,6 +49,6 @@ function download-music() {
 
 alias ssh-tunnel="ssh -R 1337:127.0.0.1:22 -N -f vultr.ssh"
 
-
+export PATH="$PATH:/opt/nvim"
 
 # neofetch
