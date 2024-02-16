@@ -26,13 +26,6 @@ alias vim=nvim
 
 export EDITOR=nvim
 
-alias monerocli=monero-wallet-cli
-
-# Initialize Conda
-# eval "$(/home/trevor/anaconda3/bin/conda shell.bash hook)"
-
-export SCHOOL_IP="169.254.119.23"
-
 # Get Total disk usage
 alias total-usage="sudo du -sh --total /"
 
@@ -55,5 +48,7 @@ function download-music() {
 }
 
 alias ssh-tunnel="ssh -R 1337:127.0.0.1:22 -N -f vultr.ssh"
+
+
 
 # neofetch
