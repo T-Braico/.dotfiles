@@ -54,7 +54,7 @@ local server_handlers = {
                 pylsp = {
                     plugins = {
                         pycodestyle = {
-                            ignore = { "E501", "E302", "E305" },
+                            ignore = { "E501", "E302", "E305", "W293", "W391" },
                         },
                     },
                 },
@@ -77,7 +77,7 @@ cmp.setup({
 	},
 	mapping = cmp.mapping.preset.insert({
 		-- enter key confirms completion item
-		-- ["<CR>"] = cmp.mapping.confirm({ select = false }),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
 
 		-- ctrl + space triggers completion menu
 		-- ["<CR>"] = cmp.mapping.complete(),
