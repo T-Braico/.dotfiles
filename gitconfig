@@ -1,13 +1,6 @@
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
 [user]
 	email = tbraico.github@gmail.com
 	name = Trevor Braico
-
 
 [alias]
 	st = status
@@ -22,8 +15,3 @@
         interactive = auto
         status = auto
 
-[credential]
-	helper = 
-	helper = /usr/local/bin/git-credential-manager
-[credential "https://dev.azure.com"]
-	useHttpPath = true
