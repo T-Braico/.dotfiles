@@ -13,6 +13,8 @@
 	st = status
 	c = "commit -m"
 	conf = "config --global -e"
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
 [credential]
 	helper = 
