@@ -16,6 +16,12 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+
 [credential]
 	helper = 
 	helper = /usr/local/bin/git-credential-manager
