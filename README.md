@@ -2,13 +2,12 @@
 
 Credit to [DotBot](https://github.com/anishathalye/dotbot/) for making it really easy to manage all of the config files and symlinks.
 
-All it takes two commands
 ```
+# Install Packer for nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
-git clone https://github.com/T-Braico/dotfiles.git && cd dotfiles && ./install
-```
-and one more to install Packer for Neovim
-```
-git clone --depth 1 https://github.com/wbthomas/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
 
+# clone and install config
+git clone https://github.com/T-Braico/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+./install
+```
