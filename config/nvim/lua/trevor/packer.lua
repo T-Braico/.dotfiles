@@ -12,13 +12,15 @@ return require('packer').startup(function(use)
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 
-	use "folke/tokyonight.nvim"
+    use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'}}
 
-	use "tpope/vim-commentary"
+	use 'folke/tokyonight.nvim'
 
-	use "tpope/vim-fugitive"
+	use 'tpope/vim-commentary'
 
-	use "mbbill/undotree"
+	use 'tpope/vim-fugitive'
+
+	use 'mbbill/undotree'
 
 	use {
 		'nvim-lualine/lualine.nvim',
@@ -27,15 +29,16 @@ return require('packer').startup(function(use)
 
 	use {
 
-		"neovim/nvim-lspconfig",
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"hrsh7th/nvim-cmp",
-		"hrsh7th/cmp-nvim-lsp",
-		"L3MON4D3/LuaSnip"
+		'neovim/nvim-lspconfig',
+		'williamboman/mason.nvim',
+		'williamboman/mason-lspconfig.nvim',
+		'hrsh7th/nvim-cmp',
+		'hrsh7th/cmp-nvim-lsp',
+		'L3MON4D3/LuaSnip'
 	}
 
-    use "ellisonleao/gruvbox.nvim"
+    use 'ellisonleao/gruvbox.nvim'
 
-    use "christoomey/vim-tmux-navigator"
+    use 'christoomey/vim-tmux-navigator'
+
 end)
