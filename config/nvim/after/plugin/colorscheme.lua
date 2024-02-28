@@ -1,5 +1,5 @@
--- require("tokyonight").setup({ style = "moon" })
--- vim.cmd[[ colorscheme tokyonight ]]
+require("tokyonight").setup({ style = "night" })
+vim.cmd[[ colorscheme tokyonight ]]
 
 vim.o.background = "dark"
-vim.cmd([[ colorscheme gruvbox ]])
+-- vim.cmd([[ colorscheme gruvbox ]])

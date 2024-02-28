@@ -104,6 +104,12 @@ _G.packer_plugins = {
     path = "/home/trevor/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["nvim-cheat.sh"] = {
+    config = { "\27LJ\2\nU\0\0\5\0\a\0\n6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0006\4\0\0009\4\5\0049\4\6\4B\0\4\1K\0\1\0\nCheat\bcmd\15<leader>cs\6n\bset\vkeymap\bvim\0" },
+    loaded = true,
+    path = "/home/trevor/.local/share/nvim/site/pack/packer/start/nvim-cheat.sh",
+    url = "https://github.com/RishabhRD/nvim-cheat.sh"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/trevor/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -134,6 +140,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/trevor/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  popfix = {
+    loaded = true,
+    path = "/home/trevor/.local/share/nvim/site/pack/packer/start/popfix",
+    url = "https://github.com/RishabhRD/popfix"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -168,6 +179,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-cheat.sh
+time([[Config for nvim-cheat.sh]], true)
+try_loadstring("\27LJ\2\nU\0\0\5\0\a\0\n6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0006\4\0\0009\4\5\0049\4\6\4B\0\4\1K\0\1\0\nCheat\bcmd\15<leader>cs\6n\bset\vkeymap\bvim\0", "config", "nvim-cheat.sh")
+time([[Config for nvim-cheat.sh]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
