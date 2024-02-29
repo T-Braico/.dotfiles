@@ -5,13 +5,20 @@ vim.keymap.set("i", "(<Enter>", "(<Enter><Backspace>)<C-c>kA<C-c>o")
 
 vim.keymap.set("i", "gp", "<C-c>")
 
+vim.keymap.set("n", "<leader>o", "o<C-c>")
+vim.keymap.set("n", "<leader>O", "O<C-c>")
+
+vim.keymap.set("n", "<leader>A", "A<C-C>")
+vim.keymap.set("n", "<leader>I", "I<C-C>")
+
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
 vim.keymap.set("n", "<leader>fq", "<cmd>q!<cr>")
 
-vim.keymap.set("n", "<C-w>n", vim.cmd.tabnew)
-vim.keymap.set("n", "<C-w>l", vim.cmd.tabnext)
+vim.keymap.set("n", "<C-T>", vim.cmd.tabnew)
+vim.keymap.set("n", "<C-n>", vim.cmd.tabnext)
+vim.keymap.set("n", "<C-N>", vim.cmd.tabprevious)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
