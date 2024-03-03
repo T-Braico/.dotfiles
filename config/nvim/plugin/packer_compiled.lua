@@ -84,10 +84,20 @@ _G.packer_plugins = {
     path = "/home/trevor/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["go.nvim"] = {
+    loaded = true,
+    path = "/home/trevor/.local/share/nvim/site/pack/packer/start/go.nvim",
+    url = "https://github.com/ray-x/go.nvim"
+  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "/home/trevor/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
+  harpoon = {
+    loaded = true,
+    path = "/home/trevor/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -156,6 +166,12 @@ _G.packer_plugins = {
     path = "/home/trevor/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  treesj = {
+    config = { "\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vtreesj\frequire\0" },
+    loaded = true,
+    path = "/home/trevor/.local/share/nvim/site/pack/packer/start/treesj",
+    url = "https://github.com/Wansmer/treesj"
+  },
   undotree = {
     loaded = true,
     path = "/home/trevor/.local/share/nvim/site/pack/packer/start/undotree",
@@ -183,6 +199,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-cheat.sh]], true)
 try_loadstring("\27LJ\2\nU\0\0\5\0\a\0\n6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0006\4\0\0009\4\5\0049\4\6\4B\0\4\1K\0\1\0\nCheat\bcmd\15<leader>cs\6n\bset\vkeymap\bvim\0", "config", "nvim-cheat.sh")
 time([[Config for nvim-cheat.sh]], false)
+-- Config for: treesj
+time([[Config for treesj]], true)
+try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vtreesj\frequire\0", "config", "treesj")
+time([[Config for treesj]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     use 'folke/tokyonight.nvim'
 
@@ -47,4 +47,16 @@ return require('packer').startup(function(use)
             vim.keymap.set("n", "<leader>cs", vim.cmd.Cheat)
         end
     }
+
+    use 'ThePrimeagen/harpoon'
+
+    use {
+        'Wansmer/treesj',
+        requires = { 'nvim-treesitter/nvim-treesitter' },
+        config = function()
+            require('treesj').setup()
+        end,
+    }
+
+    use 'ray-x/go.nvim'
 end)
