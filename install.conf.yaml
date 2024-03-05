@@ -9,6 +9,7 @@
       glob: true
       path: config/nvim/**
     ~/.xinitrc: xinitrc
+    ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
 
 - create:

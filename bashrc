@@ -47,8 +47,61 @@ function download-music() {
     yt-dlp --force-overwrite --check-formats -x -o "$2" "$1"
 }
 
-alias ssh-tunnel="ssh -R 1337:127.0.0.1:22 -N -f vultr.ssh"
+alias ssh-relay="ssh -R 1337:127.0.0.1:22 -N -f vultr.relay"
+
+# I need to be fast
+alias a=clear
+
+alias venv="source .venv/bin/activate"
+
+alias x=startx
 
 export PATH="$PATH:/opt/nvim"
 
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
+# Start ssh-agent at login
+
+function start-ssh-agent() {
+    eval "$(ssh-agent -s)" >/dev/null
+    keys=("github" "vultr.ssh")
+    for key in "${keys[@]}"; do
+        ssh-add ~/.ssh/$key
+    done
+}
+
+function shuffle() {
+    python ~/scripts/python/shuffle.py
+}
+
+# Start ssh-agent not already
+[[ "$(pgrep 'ssh-agent' | wc -l)" -ne 1 ]] && start-ssh-agent > /dev/null 2>&1
+
 # neofetch
+
+# cht.sh tab completion
+if [[ ! -f ~/.bash.d/cht.sh ]]; then
+    curl https://cheat.sh/:bash_completion > ~/.bash.d/cht.sh
+    . ~/.bash.d/cht.sh
+fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/trevor/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/trevor/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/trevor/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/trevor/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
