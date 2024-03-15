@@ -52,11 +52,10 @@ alias ssh-relay="ssh -R 1337:127.0.0.1:22 -N -f vultr.relay"
 # I need to be fast
 alias a=clear
 
-alias venv="source .venv/bin/activate"
-
 alias x=startx
 
 export PATH="$PATH:/opt/nvim"
+export PATH="$PATH:$HOME/.local/bin/"
 
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
@@ -101,7 +100,18 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+function convert(){
+    for file in *.opus; do
+        echo ${file%.*}.mp3
+        ffmpeg -i $file ${file%.*}.mp3 1>/dev/null 2>&1
+        rm $file 2>/dev/null
+    done
+}
+
+alias background='feh --bg-fill'
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+. "$HOME/.cargo/env"
