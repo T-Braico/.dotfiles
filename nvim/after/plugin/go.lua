@@ -7,8 +7,6 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     end,
 })
 
-
-
 vim.keymap.set("n", "<leader>gst", vim.cmd.GoFillStruct)
 vim.keymap.set("n", "<leader>gsw", vim.cmd.GoFillSwitch)
 vim.keymap.set("n", "<leader>gie", vim.cmd.GoIfErr)

@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/trevor/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  QFEnter = {
+    loaded = true,
+    path = "/home/trevor/.local/share/nvim/site/pack/packer/start/QFEnter",
+    url = "https://github.com/yssl/QFEnter"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/trevor/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -103,6 +108,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/trevor/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/trevor/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
+  ["markdown.nvim"] = {
+    config = { "\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rmarkdown\frequire\0" },
+    loaded = true,
+    path = "/home/trevor/.local/share/nvim/site/pack/packer/start/markdown.nvim",
+    url = "https://github.com/tadmccorkle/markdown.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -187,6 +203,11 @@ _G.packer_plugins = {
     path = "/home/trevor/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-table-mode"] = {
+    loaded = true,
+    path = "/home/trevor/.local/share/nvim/site/pack/packer/start/vim-table-mode",
+    url = "https://github.com/dhruvasagar/vim-table-mode"
+  },
   ["vim-tmux-navigator"] = {
     loaded = true,
     path = "/home/trevor/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
@@ -199,6 +220,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-cheat.sh]], true)
 try_loadstring("\27LJ\2\nU\0\0\5\0\a\0\n6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0006\4\0\0009\4\5\0049\4\6\4B\0\4\1K\0\1\0\nCheat\bcmd\15<leader>cs\6n\bset\vkeymap\bvim\0", "config", "nvim-cheat.sh")
 time([[Config for nvim-cheat.sh]], false)
+-- Config for: markdown.nvim
+time([[Config for markdown.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rmarkdown\frequire\0", "config", "markdown.nvim")
+time([[Config for markdown.nvim]], false)
 -- Config for: treesj
 time([[Config for treesj]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vtreesj\frequire\0", "config", "treesj")

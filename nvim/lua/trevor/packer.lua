@@ -12,7 +12,9 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'nvim-treesitter/nvim-treesitter', run = {
+        ':TSUpdate', ':TSBufEnable highlight'
+    } }
 
     use 'folke/tokyonight.nvim'
 
@@ -59,4 +61,24 @@ return require('packer').startup(function(use)
     }
 
     use 'ray-x/go.nvim'
+
+    use({
+        "tadmccorkle/markdown.nvim",
+        config = function()
+            require("markdown").setup({
+                -- configuration here or empty for defaults
+            })
+        end,
+    })
+
+    use 'dhruvasagar/vim-table-mode'
+
+    -- install without yarn or npm
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    use 'yssl/QFEnter'
+
 end)

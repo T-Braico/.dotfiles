@@ -78,18 +78,19 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
-ins_left {
-  function()
-    return '▊'
-  end,
-  color = { fg = colors.blue }, -- Sets highlighting of component
-  padding = { left = 0, right = 1 }, -- We don't need space before this
-}
+-- Icon
+-- ins_left {
+--   function()
+--     return '▊'
+--   end,
+--   color = { fg = colors.blue }, -- Sets highlighting of component
+--   padding = { left = 0, right = 1 }, -- We don't need space before this
+-- }
 
 ins_left {
   -- mode component
   function()
-    return ''
+    return ''
   end,
   color = function()
     -- auto change color according to neovims mode
@@ -124,6 +125,10 @@ ins_left {
   -- filesize component
   'filesize',
   cond = conditions.buffer_not_empty,
+}
+
+ins_left {
+    'buffers'
 }
 
 ins_left {
@@ -218,4 +223,4 @@ ins_right {
 }
 
 -- Now don't forget to initialize lualine
--- lualine.setup(config)
+lualine.setup(config)

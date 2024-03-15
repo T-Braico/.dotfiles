@@ -16,9 +16,17 @@ vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
 vim.keymap.set("n", "<leader>fq", "<cmd>q!<cr>")
 
-vim.keymap.set("n", "<C-t>", vim.cmd.tabnew)
+vim.keymap.set("n", "<C-g>", vim.cmd.bnext)
+vim.keymap.set("n", "<C-b>", vim.cmd.bnext)
+
+vim.keymap.set("n", "<C-t>", function()
+    vim.cmd.tabnew()
+    vim.cmd.Ex()
+end)
 vim.keymap.set("n", "<C-n>", vim.cmd.tabnext)
-vim.keymap.set("n", "<C-g>", vim.cmd.tabprevious)
+vim.keymap.set("n", "<C-m>", vim.cmd.tabprevious)
+
+vim.keymap.set("n", "<leader>tgd", ":lua vim.lsp.buf.definition()<CR>:tabnew<CR><C-O>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
