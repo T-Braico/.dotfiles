@@ -7,17 +7,24 @@
 - link:
     ~/.config/nvim/:
       glob: true
-      path: config/nvim/**
+      path: nvim/**
     ~/.xinitrc: xinitrc
     ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
+    ~/.config/alacritty/alacritty.toml: alacritty.toml
+    ~/.config/waybar/config.jsonc: waybar_config.jsonc
+    ~/.config/hypr/hyprland.conf: hyprland.conf
 
 - create:
     - ~/
+    - ~/.config/
     - ~/.config/nvim/
     - ~/.config/nvim/lua/trevor/
     - ~/.config/nvim/after/plugin/
     - ~/.config/nvim/plugin/
+    - ~/.config/hypr/
+    - ~/.config/alacritty/
+    - ~/.config/waybar/
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
