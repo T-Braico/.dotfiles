@@ -53,6 +53,7 @@ alias ssh-relay="ssh -R 1337:127.0.0.1:22 -N -f vultr.relay"
 alias a=clear
 
 alias x=startx
+alias H=Hyprland
 
 export PATH="$PATH:/opt/nvim"
 export PATH="$PATH:$HOME/.local/bin/"
