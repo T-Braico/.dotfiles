@@ -75,6 +75,7 @@
         "spacing": 10
     },
     "clock": {
+        "interval": 1, // update every second
         "timezone": "America/Chicago",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "tooltip": true,
