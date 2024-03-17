@@ -29,12 +29,6 @@ export EDITOR=nvim
 # Get Total disk usage
 alias total-usage="sudo du -sh --total /"
 
-function watch-videos() {
-    for i in {1..10}; do
-        mpv "Video $i.wmv"
-    done
-}
-
 function scroll() {
     command "$@" |& less -F 2> /dev/null
 }
@@ -44,7 +38,10 @@ function copy {
 }
 
 function download-music() {
-    yt-dlp --force-overwrite --check-formats -x -o "$2" "$1"
+    filename="$2"
+    yt-dlp --force-overwrite --check-formats -x -o "$2".webm "$1"
+    ffmpeg -i "$2".opus "$2".mp3
+    rm "$2".opus
 }
 
 alias ssh-relay="ssh -R 1337:127.0.0.1:22 -N -f vultr.relay"
