@@ -52,14 +52,17 @@ alias a=clear
 alias x=startx
 alias H=Hyprland
 
+# environment variables
 export PATH="$PATH:/opt/nvim"
-export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$PATH:$HOME/.local/bin"
+
+export XDG_CONFIG_HOME="$HOME/.config"
 
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
+# --------------------------
 
 # Start ssh-agent at login
-
 function start-ssh-agent() {
     eval "$(ssh-agent -s)" >/dev/null
     keys=("github" "vultr.ssh")
@@ -67,21 +70,7 @@ function start-ssh-agent() {
         ssh-add ~/.ssh/$key
     done
 }
-
-function shuffle() {
-    python ~/scripts/python/shuffle.py
-}
-
-# Start ssh-agent not already
 [[ "$(pgrep 'ssh-agent' | wc -l)" -ne 1 ]] && start-ssh-agent > /dev/null 2>&1
-
-# neofetch
-
-# cht.sh tab completion
-if [[ ! -f ~/.bash.d/cht.sh ]]; then
-    curl https://cheat.sh/:bash_completion > ~/.bash.d/cht.sh
-    . ~/.bash.d/cht.sh
-fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -98,17 +87,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-function convert(){
-    for file in *.opus; do
-        echo ${file%.*}.mp3
-        ffmpeg -i $file ${file%.*}.mp3 1>/dev/null 2>&1
-        rm $file 2>/dev/null
-    done
-}
-
 alias background='feh --bg-fill'
-
-
+#
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
