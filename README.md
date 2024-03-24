@@ -1,6 +1,6 @@
 # Installation
 
-Credit to [DotBot](https://github.com/anishathalye/dotbot/) for making it really easy to manage all of the config files and symlinks.
+Credit to [DotBot](https://github.com/anishathalye/dotbot/)
 
 ```
 # Install Packer for nvim
