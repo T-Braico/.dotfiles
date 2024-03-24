@@ -49,21 +49,16 @@ local run_cmds = {
     ["py"] = "python",
     ["go"] = "go run",
     ["lua"] = "lua",
+    ["sh"] = "bash"
 }
 
 -- local function sleep(n)
 --     os.execute("sleep " .. tonumber(n))
 -- end
 vim.keymap.set("n", "<leader>ru", function()
+    local extension = vim.bo.ft
     local filename = vim.fn.expand("%:p")
-
-    local extension = filename:match("^.+(%..+)$")
-    if extension then
-        extension = extension:sub(2)
-    else
-        return
-    end
-    local cmd = run_cmds[extension] .. " " .. filename
-    vim.cmd('!' .. cmd)
+    local cmd = run_cmds[extension].." "..filename
+    vim.cmd('!'..cmd)
 end
 )
