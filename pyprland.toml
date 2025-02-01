@@ -1,0 +1,15 @@
+[pyprland]
+plugins = ["scratchpads"]
+
+[scratchpads.music]
+animation = "fromTop"
+command = "alacritty -e ncmpcpp"
+class = "Alacritty"
+size = "50% 60%" 
+
+[scratchpads.cava]
+animation = "fromTop"
+command = "alacritty -e cava"
+class = "Alacritty"
+size = "25% 25%"
+position = "73% 5%"

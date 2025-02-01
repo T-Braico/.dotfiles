@@ -44,17 +44,15 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
+vim.keymap.set("n", "<leader>ap", vim.cmd.AbsPath)
 
 local run_cmds = {
-    ["py"] = "python",
+    ["python"] = "python",
     ["go"] = "go run",
     ["lua"] = "lua",
     ["sh"] = "bash"
 }
 
--- local function sleep(n)
---     os.execute("sleep " .. tonumber(n))
--- end
 vim.keymap.set("n", "<leader>ru", function()
     local extension = vim.bo.ft
     local filename = vim.fn.expand("%:p")

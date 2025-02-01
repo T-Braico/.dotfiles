@@ -12,51 +12,22 @@ export HISTFILESIZE=-1
 alias ls='ls --color=auto'
 alias ll='ls -al'
 alias grep='grep --color=auto'
-alias update='yay -Syu'
 alias cp='cp -v'
+
 PS1='[\u@\h \W]\$ '
 
-# Source AutoJump
-[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
-
-# Neovim Aliases
-alias n.="nvim ."
-alias n=nvim
-alias vim=nvim
-
 export EDITOR=nvim
+export BROWSER=librewolf
 
 # Get Total disk usage
 alias total-usage="sudo du -sh --total /"
-
-function scroll() {
-    command "$@" |& less -F 2> /dev/null
-}
-
-function copy {
-    "$@" | xclip -selection clipboard
-}
-
-function download-music() {
-    filename="$2"
-    yt-dlp --force-overwrite --check-formats -x -o "$2".webm "$1"
-    ffmpeg -i "$2".opus "$2".mp3
-    rm "$2".opus
-}
-
-alias ssh-relay="ssh -R 1337:127.0.0.1:22 -N -f vultr.relay"
-
-# I need to be fast
-alias a=clear
-
-alias x=startx
-alias H=Hyprland
 
 # environment variables
 export PATH="$PATH:/opt/nvim"
 export PATH="$PATH:$HOME/.local/bin"
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export HYPRSHOT_DIR="$HOME/screenshots"
 
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
@@ -87,9 +58,21 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-alias background='feh --bg-fill'
-#
+source /home/trevor/.aliasrc
+source /home/trevor/.functionrc
+source /home/trevor/.env
+
+source /home/trevor/scripts/bash/albums.sh
+source /home/trevor/scripts/bash/wallpaper.sh
+source /home/trevor/scripts/bash/trading.sh
+
+eval "$(jump shell)"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 . "$HOME/.cargo/env"
+
+source <(kubectl completion bash)
+complete -F _play_completions play
+

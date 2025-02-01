@@ -1,9 +1,5 @@
-import = [
-    "~/.config/alacritty/themes/ashes_dark.toml"
-]
-
 [window]
-opacity = 0.50
+opacity = 0.75
 padding = { x = 10, y = 10 }
 
 [font]
@@ -34,5 +30,10 @@ mouse = { enabled = true }
 
 bindings = [
     { key = "t", mods = "Control | Shift", action = "SpawnNewInstance" }
+]
+
+[general]
+import = [
+    "~/.config/alacritty/themes/deep_space.toml"
 ]
 
