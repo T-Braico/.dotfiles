@@ -8,7 +8,6 @@
     ~/.config/nvim/:
       glob: true
       path: nvim/**
-    ~/.bashrc: bashrc
     ~/.tmux.conf: tmux.conf
     ~/.config/alacritty/alacritty.toml: alacritty.toml
     ~/.config/waybar/config.jsonc: waybar.jsonc
