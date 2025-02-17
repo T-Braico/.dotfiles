@@ -48,7 +48,7 @@
         },
         "custom/mullvad": {
             "format": "{}",
-            "exec": "mullvad status | tail -n 1 | awk -v OFS=' ' '{ print \" \" substr($4, 1, length($4)-1) \" : \" $7 }'",
+            "exec": "echo $(mullvad status | tail -n 1 | awk -F', ' '{ print $2 }' | awk -F'.' '{ print $1 }') : $(mullvad status | tail -n 1 | awk -F': ' '{ print $3 }')",
             "interval": 1
         },
         "clock": {
